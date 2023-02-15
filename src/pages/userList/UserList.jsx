@@ -1,16 +1,40 @@
 import "./userList.css";
 import { DataGrid } from "@mui/x-data-grid";
+import { DeleteOutline } from "@mui/icons-material";
+import { userRows } from "../../dummyData";
+import { Link } from "react-router-dom";
 
 // Using DataGrid component from mui
 // Need to define rows and columns for it to work
+//importing rows to make this component partially reusable
 
 const columns = [
-  { field: "id", headerName: "ID", width: 90 },
-  { field: "username", headerName: "Username", width: 200 },
+  {
+    field: "id",
+    //value of id key fetched from rows
+    //col value
+    headerName: "ID",
+    //col title
+    width: 90,
+  },
+  {
+    field: "username",
+    headerName: "Username",
+    width: 200,
+    //method used when this is a special column ie. not just fetching a value from rows, but a combo of values/styling/inserting custom value
+    renderCell: (params) => {
+      return (
+        <div className="userListTableUser">
+          <img src={params.row.avatar} alt="" className="userListTableImg" />
+          {params.row.username}
+        </div>
+      );
+    },
+  },
   { field: "email", headerName: "Email", width: 200 },
   {
-    field: "status",
-    headerName: "Status",
+    field: "subscription",
+    headerName: "Subscription",
     width: 120,
   },
   {
@@ -18,110 +42,38 @@ const columns = [
     headerName: "Transaction Volume",
     width: 160,
   },
-];
-
-const rows = [
   {
-    id: 1,
-    username: "Jon Snow",
-    avatar:
-      "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
-    status: "active",
-    transaction: "$120.00",
-  },
-  {
-    id: 2,
-    username: "Jon Snow",
-    avatar:
-      "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
-    status: "active",
-    transaction: "$120.00",
-  },
-  {
-    id: 3,
-    username: "Jon Snow",
-    avatar:
-      "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
-    status: "active",
-    transaction: "$120.00",
-  },
-  {
-    id: 4,
-    username: "Jon Snow",
-    avatar:
-      "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
-    status: "active",
-    transaction: "$120.00",
-  },
-  {
-    id: 5,
-    username: "Jon Snow",
-    avatar:
-      "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
-    status: "active",
-    transaction: "$120.00",
-  },
-  {
-    id: 6,
-    username: "Jon Snow",
-    avatar:
-      "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
-    status: "active",
-    transaction: "$120.00",
-  },
-  {
-    id: 7,
-    username: "Jon Snow",
-    avatar:
-      "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
-    status: "active",
-    transaction: "$120.00",
-  },
-  {
-    id: 8,
-    username: "Jon Snow",
-    avatar:
-      "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
-    status: "active",
-    transaction: "$120.00",
-  },
-  {
-    id: 9,
-    username: "Jon Snow",
-    avatar:
-      "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
-    status: "active",
-    transaction: "$120.00",
-  },
-  {
-    id: 10,
-    username: "Jon Snow",
-    avatar:
-      "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "jon@gmail.com",
-    status: "active",
-    transaction: "$120.00",
+    field: "action",
+    headerName: "Action",
+    width: 150,
+    renderCell: (params) => {
+      return (
+        <>
+          {/* relative path to individual user */}
+          <Link to={`${params.row.id}`}>
+            <button className="userListTableEdit">Edit</button>
+          </Link>
+          <DeleteOutline className="userListTableDelete" />
+        </>
+      );
+    },
   },
 ];
 
 const UserList = () => {
   return (
     <div className="userList">
+      <h3 className="userListTitle">Users</h3>
       <DataGrid
-        rows={rows}
+        className="userListTable"
+        rows={userRows}
         columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
+        pageSize={10}
+        //can consider giving user more functionality by adding rows per page prop
+        checkoxSelection
+        //to prevent entire row from being selected when edit/delete button is clicked
+        disableSelectionOnClick
+        //can also consider making certain columns editable
       />
     </div>
   );
