@@ -2,3 +2,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+/* Disabling default style of Link Component */
+/* Passing down style from parent App component */
+.link {
+  text-decoration: none;
+  /* Receive from its parent */
+  color: inherit;
+}

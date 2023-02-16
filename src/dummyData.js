@@ -57,7 +57,7 @@ export const userRows = [
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "jon@gmail.com",
     subscription: "1 year",
-    transaction: "$120.00",
+    sales: "$120.00",
   },
   {
     id: 2,
@@ -66,7 +66,7 @@ export const userRows = [
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "jon@gmail.com",
     subscription: "6 months",
-    transaction: "$120.00",
+    sales: "$120.00",
   },
   {
     id: 3,
@@ -75,7 +75,7 @@ export const userRows = [
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "jon@gmail.com",
     subscription: "6 months",
-    transaction: "$120.00",
+    sales: "$120.00",
   },
   {
     id: 4,
@@ -84,7 +84,7 @@ export const userRows = [
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "jon@gmail.com",
     subscription: "3 months",
-    transaction: "$120.00",
+    sales: "$120.00",
   },
   {
     id: 5,
@@ -93,7 +93,7 @@ export const userRows = [
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "jon@gmail.com",
     subscription: "1 year",
-    transaction: "$120.00",
+    sales: "$120.00",
   },
   {
     id: 6,
@@ -102,7 +102,7 @@ export const userRows = [
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "jon@gmail.com",
     subscription: "3 months",
-    transaction: "$120.00",
+    sales: "$120.00",
   },
   {
     id: 7,
@@ -111,7 +111,7 @@ export const userRows = [
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "jon@gmail.com",
     subscription: "6 months",
-    transaction: "$120.00",
+    sales: "$120.00",
   },
   {
     id: 8,
@@ -120,7 +120,7 @@ export const userRows = [
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "jon@gmail.com",
     subscription: "3 months",
-    transaction: "$120.00",
+    sales: "$120.00",
   },
   {
     id: 9,
@@ -129,7 +129,7 @@ export const userRows = [
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "jon@gmail.com",
     subscription: "1 year",
-    transaction: "$120.00",
+    sales: "$120.00",
   },
   {
     id: 10,
@@ -138,6 +138,6 @@ export const userRows = [
       "https://images.pexels.com/photos/1152994/pexels-photo-1152994.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     email: "jon@gmail.com",
     subscription: "1 year",
-    transaction: "$120.00",
+    sales: "$120.00",
   },
 ];

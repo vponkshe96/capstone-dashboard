@@ -38,8 +38,8 @@ const columns = [
     width: 120,
   },
   {
-    field: "transaction",
-    headerName: "Transaction Volume",
+    field: "sales",
+    headerName: "Sales Amount",
     width: 160,
   },
   {
@@ -53,6 +53,7 @@ const columns = [
           <Link to={`${params.row.id}`}>
             <button className="userListTableEdit">Edit</button>
           </Link>
+          {/* AXIOS DELETE REQUEST HERE*/}
           <DeleteOutline className="userListTableDelete" />
         </>
       );
