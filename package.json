@@ -41,6 +41,17 @@
       "not dead",
       "not op_mini all"
     ],
+      "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vponkshe96/capstone-dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vponkshe96/capstone-dashboard/issues"
+  },
+    "homepage": "https://github.com/vponkshe96/capstone-dashboard#readme",
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
