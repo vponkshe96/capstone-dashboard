@@ -15,10 +15,11 @@
   margin: 20px;
 }
 
-.userListTableUser {
+/* NOT sure why I put this */
+/* .userListTableUser {
   display: flex;
   align-items: center;
-}
+} */
 
 .userListTableImg {
   height: 32px;
@@ -43,6 +44,7 @@
   cursor: pointer;
 }
 
+/* ADD LATER */
 .widgetLgButton.Approved {
   background-color: #e5faf2;
   color: #3bb077;

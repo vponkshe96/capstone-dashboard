@@ -14,16 +14,16 @@
   font-weight: 600;
 }
 
-.userAddButton {
+/* .userAddButton {
   border: none;
   border-radius: 5px;
   width: 80px;
   padding: 5px;
   /* height gets automatically adjusted */
-  background-color: teal;
+  /* background-color: teal;
   color: white;
   font-size: 16px;
-}
+} */ 
 
 .userContainer {
   margin-top: 20px;

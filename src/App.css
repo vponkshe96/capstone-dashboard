@@ -3,8 +3,8 @@
   justify-content: space-between;
 }
 
-/* Disabling default style of Link Component */
-/* Passing down style from parent App component */
+/* Disabling default style of Link React Router DOM Component */
+/* Passing down style from root App component */
 .link {
   text-decoration: none;
   /* Receive from its parent */

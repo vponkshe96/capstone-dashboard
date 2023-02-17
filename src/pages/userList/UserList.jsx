@@ -18,34 +18,46 @@ const columns = [
     width: 90,
   },
   {
-    field: "username",
-    headerName: "Username",
-    width: 200,
+    field: "fullName",
+    headerName: "Full Name",
+    width: 150,
+    //COMMENT out for now
     //method used when this is a special column ie. not just fetching a value from rows, but a combo of values/styling/inserting custom value
-    renderCell: (params) => {
-      return (
-        <div className="userListTableUser">
-          <img src={params.row.avatar} alt="" className="userListTableImg" />
-          {params.row.username}
-        </div>
-      );
-    },
+    // renderCell: (params) => {
+    //   return (
+    //     <div className="userListTableUser">
+    //       <img src={params.row.avatar} alt="" className="userListTableImg" />
+    //       {params.row.username}
+    //     </div>
+    //   );
+    // },
   },
-  { field: "email", headerName: "Email", width: 200 },
+
   {
-    field: "subscription",
-    headerName: "Subscription",
+    field: "email",
+    headerName: "Email",
+    width: 200,
+  },
+  {
+    field: "date",
+    headerName: "Date",
     width: 120,
   },
   {
-    field: "sales",
-    headerName: "Sales Amount",
-    width: 160,
+    field: "subscriptionType",
+    headerName: "Subscription Type",
+    width: 150,
+  },
+  {
+    field: "paymentAmount",
+    headerName: "Payment Amount",
+    width: 120,
   },
   {
     field: "action",
     headerName: "Action",
-    width: 150,
+    width: 120,
+
     renderCell: (params) => {
       return (
         <>
@@ -70,7 +82,8 @@ const UserList = () => {
         rows={userRows}
         columns={columns}
         pageSize={10}
-        //can consider giving user more functionality by adding rows per page prop
+        //need it to set page size
+        rowsPerPageOptions={[10]}
         checkoxSelection
         //to prevent entire row from being selected when edit/delete button is clicked
         disableSelectionOnClick

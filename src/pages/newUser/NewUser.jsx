@@ -1,6 +1,7 @@
 import "./newUser.css";
 import { Add } from "@mui/icons-material";
 import { useState } from "react";
+import axios from "axios";
 
 const NewUser = () => {
   //REFACTOR by having only one on change function
@@ -15,9 +16,22 @@ const NewUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     //shorthand object notation
-    const user = { fullName, email, date, subscriptionType, paymentAmount };
-    //POST REQUEST goes here
-    console.log(user);
+    const client = { fullName, date, email, subscriptionType, paymentAmount };
+    console.log(client);
+    //Sending post request to backend express server, receive and store response
+
+    const response = await axios.post(
+      "http://localhost:8080/clients/addClient",
+      client
+    )
+    if (response.status === 200) {
+      alert("New meeting has been successfully ADDED!");
+      //prevent page refresh
+      //NOT EXACTLY sure, something related to not having to refresh page to view latest data
+      window.location.reload(false);
+    } else {
+      console.log(response.data.error);
+    }
     //RESETTING FORM after submission
     setFullName("");
     setEmail("");
@@ -37,7 +51,6 @@ const NewUser = () => {
             type="text"
             placeholder="John Smith"
             value={fullName}
-            x
             onChange={(e) => setFullName(e.target.value)}
           />
         </div>
@@ -59,10 +72,10 @@ const NewUser = () => {
           />
         </div>
         <div className="newUserItem">
-          <label for="subscriptionType">Subscription Type</label>
+          {/* Deleted htmlFor att in label and id in select Felt it was redundant*/}
+          <label>Subscription Type</label>
           <select
             className="newUserSelect"
-            id="subscriptionType"
             value={subscriptionType}
             onChange={(e) => setSubscriptionType(e.target.value)}
           >
@@ -71,10 +84,9 @@ const NewUser = () => {
           </select>
         </div>
         <div className="newUserItem">
-          <label for="paymentAmount">Payment Amount (in US$)</label>
+          <label>Payment Amount (in US$)</label>
           <select
             className="newUserSelect"
-            id="payment"
             value={paymentAmount}
             onChange={(e) => setPaymentAmount(e.target.value)}
           >

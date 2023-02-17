@@ -13,7 +13,6 @@ const User = () => {
     <div className="user">
       <div className="userTitleContainer">
         <h1 className="userTitle">Edit User</h1>
-        <button className="userAddButton">Create</button>
       </div>
       <div className="userContainer">
         <div className="userDisplay">
@@ -32,11 +31,11 @@ const User = () => {
             <span className="userDisplayTitle">Account Details</span>
             <div className="userDisplayInfo">
               <PermIdentity className="userDisplayIcon" />
-              <span className="userDisplayInfoTitle">annabeck99</span>
+              <span className="userDisplayInfoTitle">Anna Becker</span>
             </div>
             <div className="userDisplayInfo">
               <CalendarToday className="userDisplayIcon" />
-              <span className="userDisplayInfoTitle">10.12.1999</span>
+              <span className="userDisplayInfoTitle">annabecker@gmail.com</span>
             </div>
             <span className="userDisplayTitle">Contact Details</span>
             <div className="userDisplayInfo">
@@ -82,20 +81,22 @@ const User = () => {
                 />
               </div>
               <div className="userUpdateItem">
-                <label>Phone</label>
-                <input
-                  type="text"
-                  placeholder="+1 123 456 67"
-                  className="userUpdateInput"
-                />
+                <label>Date</label>
+                <input type="date" className="userUpdateInput" />
               </div>
               <div className="userUpdateItem">
-                <label>Address</label>
-                <input
-                  type="text"
-                  placeholder="New York | USA"
-                  className="userUpdateInput"
-                />
+                <label for="subscriptionType">Subscription Type</label>
+                <select className="newUserSelect" id="subscriptionType">
+                  <option>1-Time</option>
+                  <option>Lifetime</option>
+                </select>
+              </div>
+              <div className="userUpdateItem">
+                <label for="paymentAmount">Payment Amount (in US$)</label>
+                <select className="newUserSelect" id="payment">
+                  <option>1,000</option>
+                  <option>10,000</option>
+                </select>
               </div>
             </div>
             <div className="userUpdateRight">
